@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 import datetime
-from django.template import Template, Context, loader
+from django.template import Template, Context
+from django.template.loader import get_template
 
 
 class Persona(object):
@@ -21,7 +22,7 @@ def saludo(request):  # Primera vista
         "C:/Users/adria/Documents/ProyectosDjango/Proyecto1/Proyecto1/Plantillas/index.html")
     plantilla = Template(docExterno.read())
     docExterno.close() """
-    docExterno = loader.get_template('index.html')
+    docExterno = get_template('index.html')
     """ contexto = Context(
         {"nombre_persona": persona1.nombre, "apellido_persona": persona1.apellido, "hora_actual": ahora, "temas": temasDelCurso}) """
     #documento = plantilla.render(contexto)
