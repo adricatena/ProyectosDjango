@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla</title>
+</head>
+
+<body>
+    <h1>Hola mundo desde una plantilla!</h1>
+    {# NO TEMAS DISENADOR, IGNORA ESTE COMENTARIO! #}
+    {% comment %}
+    Tampoco a este comentario
+    {% endcomment %}
+    {% if nombre_persona == 'Adriano'%}
+    <p>El curso lo da el profesor titular</p>
+    {% else %}
+    <p>El curso lo da el profesor suplente</p>
+    {% endif %}
+    <p>El nombre del profesor es: {{nombre_persona.upper}} {{apellido_persona.upper}}</p>
+    <p>La hora actual es: {{hora_actual.day}}/{{hora_actual.month}}/{{hora_actual.year}}</p>
+    <h4>Temas del curso:</h4>
+    <ul>
+        {% if temas%}
+        {% for tema in temas %}
+        <li>{{tema}}</li>
+        <li>{{tema|first|lower}}</li>
+        {% endfor %}
+        {% else %}
+        <p>No hay elementos para mostrar</p>
+        {% endif %}
+    </ul>
+    <p>{{temas.1}}</p>
+</body>
+
+</html>
