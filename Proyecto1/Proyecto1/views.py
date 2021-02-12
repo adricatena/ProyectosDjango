@@ -2,6 +2,7 @@ from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
 from django.template.loader import get_template
+from django.shortcuts import render
 
 
 class Persona(object):
@@ -12,8 +13,8 @@ class Persona(object):
 
 def saludo(request):  # Primera vista
     persona1 = Persona("Adriano", "Catena")
-    nombre = "Adriano"
-    apellido = "Catena"
+    #nombre = "Adriano"
+    # apellido = "Catena"
     #temasDelCurso = []
     temasDelCurso = ["Plantillas", "Modelos",
                      "Formularios", "Vistas", "Deploy"]
@@ -22,13 +23,14 @@ def saludo(request):  # Primera vista
         "C:/Users/adria/Documents/ProyectosDjango/Proyecto1/Proyecto1/Plantillas/index.html")
     plantilla = Template(docExterno.read())
     docExterno.close() """
-    docExterno = get_template('index.html')
+    #docExterno = get_template('index.html')
     """ contexto = Context(
         {"nombre_persona": persona1.nombre, "apellido_persona": persona1.apellido, "hora_actual": ahora, "temas": temasDelCurso}) """
     #documento = plantilla.render(contexto)
-    documento = docExterno.render({"nombre_persona": persona1.nombre,
-                                   "apellido_persona": persona1.apellido, "hora_actual": ahora, "temas": temasDelCurso})
-    return HttpResponse(documento)
+    # documento = docExterno.render({"nombre_persona": persona1.nombre,
+    #                               "apellido_persona": persona1.apellido, "hora_actual": ahora, "temas": temasDelCurso})
+    # return HttpResponse(documento)
+    return render(request, "index.html", {"nombre_persona": persona1.nombre, "apellido_persona": persona1.apellido, "hora_actual": ahora, "temas": temasDelCurso})
 
 
 def despedida(request):
