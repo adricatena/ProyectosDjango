@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+</head>
+
+<body>
+    <h1 style="background-color:aqua; color:black; text-align: center;">Cucina di Tati</h1>
+    {% include "Superior/nav.html" %}
+    <h3 style="text-align: right;">Pasteleria, panaderia y mucho mas!</h3>
+    {% block content %} {% endblock %}
+    <footer style="background-color:aqua; color:black; text-align: right;">Gracias por su visita!</footer>
+</body>
+
+</html>
