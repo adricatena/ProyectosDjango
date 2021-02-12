@@ -49,3 +49,13 @@ def calcularEdad(request, edad, anio):
     documento = "<html><body><h2>En el año %s tendras %s años</html></body></h2>" % (
         anio, edadFutura)
     return HttpResponse(documento)
+
+
+def tortas(request):
+    fecha = datetime.datetime.now()
+    return render(request, "tortas.html", {"dameFecha": fecha.date})
+
+
+def tartas(request):
+    fecha = datetime.datetime.now()
+    return render(request, "tartas.html", {"dameFecha": fecha.date})
