@@ -6,6 +6,7 @@ from gestionPedidos.models import Clientes, Articulos, Pedidos
 
 class ClientesAdmin(admin.ModelAdmin):
     list_display = ("nombre", "direccion", "telefono")
+    search_fields = ("nombre", "telefono")
 
 
 admin.site.register(Clientes, ClientesAdmin)
