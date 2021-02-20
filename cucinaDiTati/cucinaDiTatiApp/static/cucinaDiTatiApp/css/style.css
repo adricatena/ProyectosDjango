@@ -1,0 +1,20 @@
+header {
+    background-color: #ffd4da;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+header > h1 {
+    margin: 1px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffd4da;
+    text-align: center;
+}
