@@ -1,4 +1,27 @@
 {% extends 'cucinaDiTatiApp/base.html' %}
+{% load static %}
 {% block content %}
-<h4>Aca va en contenido de los Servicios</h4>
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Contenido</th>
+            <th scope="col">Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for servicio in servicios %}
+        <tr>
+            <!-- <th scope="row">{{forloop.counter}}</th> -->
+            <th scope="row">{{servicio.id}}</th>
+            <td>{{servicio.titulo}}</td>
+            <td>{{servicio.contenido}}</td>
+            <td><img src="{{servicio.imagen.url}}"></td>
+        </tr>
+        <!-- {{servicio.titulo}} {{servicio.contenido}} -->
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
