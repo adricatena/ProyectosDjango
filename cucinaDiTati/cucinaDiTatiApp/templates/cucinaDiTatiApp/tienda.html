@@ -1,4 +1,10 @@
 {% extends 'cucinaDiTatiApp/base.html' %}
+{% block navbarBrand %}
+<a class="navbar-brand" href="{% url 'tienda' %}">Tienda</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+</button>
+{% endblock %}
 {% block content %}
 <h4>Aca va en contenido de la Tienda</h4>
 {% endblock %}
