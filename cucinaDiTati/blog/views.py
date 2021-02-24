@@ -5,4 +5,6 @@ from blog.models import Post, Categoria
 
 
 def blog(request):
-    return render(request, 'blog/blog.html')
+    posteos = Post.objects.all()
+    categorias = Categoria.objects.all()
+    return render(request, 'blog/blog.html', {'posteos': posteos})
