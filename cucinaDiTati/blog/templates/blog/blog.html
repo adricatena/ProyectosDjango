@@ -40,9 +40,9 @@
     </tbody>
 </table>
 <h3>Categorias</h3>
-<ol>
+<ul>
     {% for categoria in categorias%}
-    <li>{{categoria.nombre}}</li>
+    <li><a href="{% url 'categoria' categoria.id %}">{{categoria.nombre}}</a></li>
     {% endfor %}
-</ol>
+</ul>
 {% endblock %}
