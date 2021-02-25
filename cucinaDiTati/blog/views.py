@@ -7,4 +7,10 @@ from blog.models import Post, Categoria
 def blog(request):
     posteos = Post.objects.all()
     categorias = Categoria.objects.all()
-    return render(request, 'blog/blog.html', {'posteos': posteos})
+    return render(request, 'blog/blog.html', {'posteos': posteos, 'categorias': categorias})
+
+
+def categoria(request, categoria_id):
+    categoria = Categoria.objects.get(id=categoria_id)
+    posteos = Post.objects.filter(categorias=categoria)
+    return render(request, 'blog/categoria.html', {'categoria': categoria, 'posteos': posteos})
