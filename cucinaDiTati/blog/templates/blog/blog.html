@@ -20,11 +20,29 @@
             <th scope="row">{{post.id}}</th>
             <td>{{post.titulo}}</td>
             <td>{{post.contenido}}</td>
-            <td><img src="{{post.imagen.url}}" {% if post.imagen.url %} alt="Sin imagen" {% endif %}></td>
+            <td>
+                {% if not post.imagen %}
+                <p>Post sin imagen</p>
+                {% else %}
+                <img src="{{post.imagen.url}}" alt="{{post.titulo}}">
+                {% endif %}
+            </td>
             <td>{{post.autor}}</td>
-            <td>{{post.categorias}}</td>
+            <td>
+                <ul>
+                    {% for categoria in post.categorias.all %}
+                    <li>{{categoria.nombre}}</li>
+                    {% endfor %}
+                </ul>
+            </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
+<h3>Categorias</h3>
+<ol>
+    {% for categoria in categorias%}
+    <li>{{categoria.nombre}}</li>
+    {% endfor %}
+</ol>
 {% endblock %}
