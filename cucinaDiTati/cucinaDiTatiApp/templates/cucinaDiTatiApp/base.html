@@ -28,16 +28,16 @@
                 <li class="nav-item {% if request.path == '/' or request.path == '/home/' %}active{% endif %}">
                     <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
-                <li class="nav-item {% if request.path == '/servicios/' %}active{% endif %}">
+                <li class="nav-item {% if request.path|slice:':11' == '/servicios/' %}active{% endif %}">
                     <a class="nav-link" href="{% url 'servicios' %}">Servicios</a>
                 </li>
-                <li class="nav-item {% if request.path == '/tienda/' %}active{% endif %}">
+                <li class="nav-item {% if request.path|slice:':8' == '/tienda/' %}active{% endif %}">
                     <a class="nav-link" href="{% url 'tienda' %}">Tienda</a>
                 </li>
-                <li class="nav-item {% if request.path == '/contacto/' %}active{% endif %}">
+                <li class="nav-item {% if request.path|slice:':10' == '/contacto/' %}active{% endif %}">
                     <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                 </li>
-                <li class="nav-item {% if request.path == '/blog/' %}active{% endif %}">
+                <li class="nav-item {% if request.path|slice:':6' == '/blog/' %}active{% endif %}">
                     <a class="nav-link" href="{% url 'blog' %}">Blog</a>
                 </li>
             </ul>
