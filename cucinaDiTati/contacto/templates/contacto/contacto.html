@@ -1,7 +1,11 @@
 {% extends 'cucinaDiTatiApp/base.html' %}
 {% block content %}
 <h4>Aca va en contenido para Contacto</h4>
-
-{{formularioContacto}}
-
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{formularioContacto.as_table}}
+    </table>
+    <input type="submit" value="Enviar">
+</form>
 {% endblock %}
