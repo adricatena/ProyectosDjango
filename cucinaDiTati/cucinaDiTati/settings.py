@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'cucinaDiTatiApp',
     'servicios',
     'blog',
+    'contacto',
 ]
 
 MIDDLEWARE = [

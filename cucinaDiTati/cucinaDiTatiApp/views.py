@@ -9,7 +9,3 @@ def home(request):
 
 def tienda(request):
     return render(request, 'cucinaDiTatiApp/tienda.html')
-
-
-def contacto(request):
-    return render(request, 'cucinaDiTatiApp/contacto.html')
