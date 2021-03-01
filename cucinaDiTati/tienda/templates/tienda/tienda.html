@@ -1,10 +1,42 @@
 {% extends 'cucinaDiTatiApp/base.html' %}
-{% block navbarBrand %}
+<!-- {% block navbarBrand %}
 <a class="navbar-brand" href="{% url 'tienda' %}">Tienda</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
 </button>
-{% endblock %}
+{% endblock %} -->
 {% block content %}
-<h4>Aca va en contenido de la Tienda</h4>
+<h4>Tienda</h4>
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Categorias</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Disponibilidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in productos %}
+        <tr>
+            <!-- <th scope="row">{{forloop.counter}}</th> -->
+            <th scope="row">{{producto.id}}</th>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.categorias}}</td>
+            <td>
+                {% if not producto.imagen %}
+                <p>Post sin imagen</p>
+                {% else %}
+                <img src="{{producto.imagen.url}}" alt="{{producto.titulo}}">
+                {% endif %}
+            </td>
+            <td>$ {{producto.precio}}</td>
+            <td>{{producto.disponibilidad}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
