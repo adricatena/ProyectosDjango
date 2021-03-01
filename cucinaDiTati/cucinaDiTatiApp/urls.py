@@ -4,5 +4,4 @@ from cucinaDiTatiApp import views
 urlpatterns = [
     path('', views.home, name=''),
     path('home/', views.home, name='home'),
-    path('tienda/', views.tienda, name='tienda'),
 ]

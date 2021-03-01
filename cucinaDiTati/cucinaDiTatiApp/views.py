@@ -5,7 +5,3 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, 'cucinaDiTatiApp/home.html')
-
-
-def tienda(request):
-    return render(request, 'cucinaDiTatiApp/tienda.html')
