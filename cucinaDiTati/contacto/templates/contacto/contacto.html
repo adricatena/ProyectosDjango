@@ -1,6 +1,10 @@
 {% extends 'cucinaDiTatiApp/base.html' %}
 {% block content %}
 <h4>Aca va en contenido para Contacto</h4>
+{% if 'valido' in request.GET %}
+<h6>Informacion enviada correctamente. Gracias!</h6>
+
+{% endif %}
 <form action="" method="POST">
     {% csrf_token %}
     <table>
@@ -8,4 +12,7 @@
     </table>
     <input type="submit" value="Enviar">
 </form>
+
+<!-- {{request.POST}} -->
+
 {% endblock %}
